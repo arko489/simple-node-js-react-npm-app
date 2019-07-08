@@ -1,0 +1,10 @@
+node{
+stage('Checkout SCM')
+{
+git 'https://github.com/arko489/simple-node-js-react-npm-app.git'
+}
+stage('compile-package')
+{
+sh'npm'
+}
+}
