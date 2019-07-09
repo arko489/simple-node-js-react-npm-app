@@ -3,7 +3,7 @@ pipeline{
 agent any
 tools {nodejs 'nodejs'}
 stages{
-stage('First Stage'){
+stage('SCM CHECKOUT'){
 steps{
 echo "We are in the first stage"
 git 'https://github.com/arko489/simple-node-js-react-npm-app.git'
