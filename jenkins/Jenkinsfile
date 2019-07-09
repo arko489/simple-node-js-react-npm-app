@@ -2,15 +2,8 @@ pipeline {
     agent any
     
     tools {nodejs "nodejs"}
-    stages{
-stage('SCM CHECKOUT'){
-steps{
-
-git 'https://github.com/arko489/simple-node-js-react-npm-app.git'
-}
-}
     
-   
+    stages {
         stage('Build') {
             steps {
                 sh 'npm install'
@@ -21,6 +14,11 @@ git 'https://github.com/arko489/simple-node-js-react-npm-app.git'
                 sh './jenkins/scripts/test.sh'
             }
         }
-       
+        stage('Deliver') {
+            steps {
+                sh './jenkins/scripts/deliver.sh'
+                sh './jenkins/scripts/kill.sh'
+            }
+        }
     }
 }
