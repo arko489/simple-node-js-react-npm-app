@@ -5,6 +5,6 @@ stage('SCM Checkout')
    }
    Stage('Compile-Package')
    {
-      sh'pipeline npm integration'
+      sh 'npm install'
       }
       }
