@@ -3,12 +3,17 @@ pipeline{
 agent any
 stages{
 stage('First Stage'){
+steps{
 echo "We are in the first stage"
 git 'https://github.com/arko489/simple-node-js-react-npm-app.git'
+}
+
 
 }
 stage('Second stage'){
+steps{
 echo "We are in the second stage"
+}
 }
 }
 }
