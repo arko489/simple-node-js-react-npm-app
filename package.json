@@ -1,16 +1,17 @@
 {
-  "name": "my-app",
+ "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14"
+  "homepage": "http://18.191.215.188:8080/manager/var/lib/tomcat8/webapps"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
 }
