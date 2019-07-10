@@ -12,11 +12,8 @@ pipeline {
         stage('Test') {
             steps {
                 sh './jenkins/scripts/test.sh'
-            }
-        }
-         stage('Test case Deliver') {
-            steps {
                 sh './jenkins/scripts/deliver.sh'
+                sh './jenkins/scripts/kill.sh'
             }
         }
        
