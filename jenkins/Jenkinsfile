@@ -27,5 +27,12 @@ pipeline {
                 sh label: '', script: 'curl -v -u trainee:trainee --upload-file build.zip http://3.14.251.87:8081/nexus/content/repositories/devopstraining/arko/build.zip'
             }
         }
+         stage('Deploy') {
+            steps {
+                sh 'pwd'
+                sh label: '', script: 'curl -u admin:admin --upload-file build.zip http://18.191.215.188:8080/manager/text/deploy?config=file:/var/lib/tomcat8/build.zip\\&path=/jgm'
+                sh 'ssh http://18.191.215.188:8080/manager  ls'
+            }
+        }
     }
 }
