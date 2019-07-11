@@ -31,7 +31,7 @@ pipeline {
          stage('Deploy') {
             steps {
                  withCredentials([usernameColonPassword(credentialsId: 'arko489_tomcat', variable: 'password1')]) {
-                sh 'pwd'
+                //sh 'pwd'
                 sh label: '', script: 'curl -u  "${password1}"  --upload-file build.zip http://18.191.215.188:8080/manager/text/deploy?config=file:/var/lib/tomcat8/build.zip\\&path=/jgm'
                  }
             }
